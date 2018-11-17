@@ -130,7 +130,7 @@ def extract(imgFpath,params,outdir,tag):
     features.append(_dwt(RminG,params['kernel'],params['level']))
     #flatten the features list
     features = np.ravel(features)
-    print(features)
+    #print(features)
     np.savetxt(os.path.join(outdir,tag+'_wtio.txt'),features,delimiter=',')
     with open(os.path.join(outdir,tag+'_wtio.pkl'),'wb') as f: joblib.dump(features,f)
     return features

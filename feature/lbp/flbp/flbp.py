@@ -8,6 +8,7 @@ import cv2
 import math
 import numpy as np
 import matplotlib.pyplot as plt
+import socket
 from sklearn.externals import joblib
 
 def extract(img,n,r):
@@ -116,8 +117,8 @@ def _flbp(imgOri, nNeighbors, radius):
 
 def _main(argv):
     if len(argv)!=5:
-        print 'USAGE:';
-        print 'python flbp.py [nNeighbors] [radius] [inDir] [outDir]'
+        print ('USAGE:');
+        print ('python flbp.py [nNeighbors] [radius] [inDir] [outDir]')
 
     nNeighbors = int(argv[1])
     radius = int(argv[2])
@@ -149,18 +150,18 @@ def _main(argv):
 
         for imgFname in imgFnames:
             imgFpath = os.path.join(cDir,imgFname)
-            print 'extracting '+imgFpath
+            print ('extracting '+imgFpath)
 
             img = cv2.imread(imgFpath)
             texture = extract(img,nNeighbors,radius)
 
-            print img.shape
-            print len(texture)
+            print (img.shape)
+            print (len(texture))
 
             fname  = imgFname[0:-4]+'_flbp'
             with open(os.path.join(cOutDir,fname+'.fea'), 'w') as f:
                 for i in texture: f.write(str(i)+'\n')
-            with open(os.path.join(cOutDir,fname+'.pkl'), 'w') as f:
+            with open(os.path.join(cOutDir,fname+'.pkl'), 'wb') as f:
                 joblib.dump(texture,f)
 
             plt.clf()
@@ -172,8 +173,8 @@ def _main(argv):
             plt.savefig(os.path.join(cOutDir,fname+'.png'), bbox_inches='tight')
             plt.close()
 
-            break
-        break
+            #break
+        #break
 
     with open(paramFpath,'w') as f:
         json.dump(param,f,sort_keys=True,indent=2)

@@ -34,6 +34,9 @@ def main(argv):
     elif feaName== 'wmiftah':
         sys.path.append('./wavelet/wmiftah'); import wmiftah
         extractor = wmiftah
+    elif feaName== 'haralick':
+        sys.path.append('./glcm/haralick'); import haralick
+        extractor = haralick
     else:
         print ('FATAL: unknown featureName')
         return
@@ -54,7 +57,7 @@ def main(argv):
         cInDir = os.path.join(inDir,c)
         imgFnames = [f for f in os.listdir(cInDir)
                      if os.path.isfile(os.path.join(cInDir,f))
-                        and (f.endswith(".jpg") or f.endswith('.JPG'))]
+                        and (f.endswith(".jpg") or f.endswith('.JPG') or f.endswith('.bmp'))]
         nImg = len(imgFnames)
 
         cOutDir = os.path.join(outDir,c)

@@ -29,7 +29,7 @@ def extract(imgFpath,params,outdir,tag):
     # output
     np.savetxt(os.path.join(outdir,tag+'_slbpImg.txt'),lbpImg,delimiter=',')
     np.savetxt(os.path.join(outdir,tag+'_slbpHist.txt'),lbpHist,delimiter=',')
-    with open(os.path.join(outdir,tag+'_slbpHist.pkl'),'w') as f: joblib.dump(lbpHist,f)
+    with open(os.path.join(outdir,tag+'_slbpHist.pkl'),'wb') as f: joblib.dump(lbpHist,f)
     
     fig,((ax1,ax2),(ax3,ax4)) = plt.subplots(nrows=2,ncols=2,
                                              figsize=(9,6))

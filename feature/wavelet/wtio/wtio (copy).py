@@ -151,25 +151,15 @@ def _wtioPreprocess(image, resize):
         image = cv2.resize(image, (newCols, newRows))
     
     # blur the image
-    # image = cv2.GaussianBlur(image,(3,3),0)
-    image = cv2.blur(image, (3,3))
+    image = cv2.blur(image, (5,5))
     
-    # img = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    # ret2,th2 = cv2.threshold(img,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
-    # # split channel
-    #image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+    # split channel
     b,g,r = cv2.split(image)
 
-    # # subtract channel
-    # GminR = cv2.subtract(r,b)
-    # GminB = cv2.subtract(g,b)
-    # RminG = cv2.subtract(r,g)
+    # subtract channel
     GminR = cv2.subtract(g,r)
     GminB = cv2.subtract(g,b)
     RminG = cv2.subtract(r,g)
-    # GminR = b.copy()
-    # GminB = g.copy()
-    # RminG = r.copy()
 
     return GminR, GminB, RminG
 

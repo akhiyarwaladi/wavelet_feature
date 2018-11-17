@@ -1,15 +1,24 @@
 #!/bin/bash
 
-#FEATURE=wmiftah
-#FEATURE_CFG=wavelet/wmiftah/wmiftah.cfg
-FEATURE=wtio
-FEATURE_CFG=wavelet/wtio/wtio.cfg
+# FEATURE=wmiftah
+# FEATURE_CFG=wavelet/wmiftah/wmiftah.cfg
+# FEATURE=wtio
+# FEATURE_CFG=wavelet/wtio/wtio.cfg
 #FEATURE=wdil
 #FEATURE_CFG=wavelet/wdil/wtio.cfg
+# FEATURE=slbp
+# FEATURE_CFG=lbp/slbp/slbp.cfg
+FEATURE=haralick
+FEATURE_CFG=glcm/haralick/haralick.cfg
 
 #DATASET=acacia-crassicarpa
-#DATASET=eomf
-DATASET=color
+#DATASET=melanoma_binary
+DATASET=melanoma_hair
+#DATASET=melanoma_binary_augmented
+#DATASET=DataPH2_lesion_hairremove
+#DATASET=DataPH2_lesion_hairremove_augmented
+# DATASET=DataPH2_lesion
+#DATASET=DataPH2_lesion_augmented
 
 DATA_DIR=../dataset/arara-classify
 OUT_DIR=../xprmt/feature
