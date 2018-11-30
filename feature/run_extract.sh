@@ -13,11 +13,11 @@ FEATURE_CFG=glcm/haralick/haralick.cfg
 
 #DATASET=acacia-crassicarpa
 #DATASET=melanoma_binary
-DATASET=melanoma_hair
 #DATASET=melanoma_binary_augmented
+DATASET=melanoma_hair
 #DATASET=DataPH2_lesion_hairremove
 #DATASET=DataPH2_lesion_hairremove_augmented
-# DATASET=DataPH2_lesion
+#DATASET=DataPH2_lesion
 #DATASET=DataPH2_lesion_augmented
 
 DATA_DIR=../dataset/arara-classify

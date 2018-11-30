@@ -199,7 +199,7 @@ def extract(imgFpath,params,outdir,tag):
         features.append(_waveletPacket(RminG, os.path.join(outdir,tag), params['level'], params['kernel'], params['subband'], params['plot']))
     #flatten the features list
     features = np.ravel(features)
-    np.savetxt(os.path.join(outdir,tag+'_wtio.txt'),features,delimiter=',')
+    #np.savetxt(os.path.join(outdir,tag+'_wtio.txt'),features,delimiter=',')
     with open(os.path.join(outdir,tag+'_wtio.pkl'),'wb') as f: joblib.dump(features,f)
     return features
 
