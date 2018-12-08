@@ -54,7 +54,7 @@ def extract(imgFpath,params,outdir,tag):
 	#i += 1
 
 
-	np.savetxt(os.path.join(outdir,tag+'_haralick.txt'),features,delimiter=',')
+	#np.savetxt(os.path.join(outdir,tag+'_haralick.txt'),features,delimiter=',')
 
 	with open(os.path.join(outdir,tag+'_haralick.pkl'),'wb') as f: joblib.dump(features,f)
 

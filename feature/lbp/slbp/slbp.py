@@ -27,8 +27,8 @@ def extract(imgFpath,params,outdir,tag):
                                bins=histBin,range=histRange,density=True)
 
     # output
-    np.savetxt(os.path.join(outdir,tag+'_slbpImg.txt'),lbpImg,delimiter=',')
-    np.savetxt(os.path.join(outdir,tag+'_slbpHist.txt'),lbpHist,delimiter=',')
+    #np.savetxt(os.path.join(outdir,tag+'_slbpImg.txt'),lbpImg,delimiter=',')
+    #np.savetxt(os.path.join(outdir,tag+'_slbpHist.txt'),lbpHist,delimiter=',')
     with open(os.path.join(outdir,tag+'_slbpHist.pkl'),'wb') as f: joblib.dump(lbpHist,f)
     
     fig,((ax1,ax2),(ax3,ax4)) = plt.subplots(nrows=2,ncols=2,
@@ -41,7 +41,7 @@ def extract(imgFpath,params,outdir,tag):
     ax3.set_ylabel('Percentage')
     ax3.set_xlabel('LBP values (method:'+params['method']+')')
 
-    plt.savefig(os.path.join(outdir,tag+'_slbpPlot.png'),bbox_inches='tight')
+    #plt.savefig(os.path.join(outdir,tag+'_slbpPlot.png'),bbox_inches='tight')
     plt.close()
     
     return lbpHist
