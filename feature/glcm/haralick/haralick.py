@@ -5,6 +5,7 @@ import glob
 import mahotas as mt
 from sklearn.svm import LinearSVC
 from sklearn.externals import joblib
+import skimage.io as io
 
 
 # function to extract haralick textures from an image
@@ -24,7 +25,7 @@ def extract(imgFpath,params,outdir,tag):
 	# train_names = os.listdir(train_path)
 
 	# # empty list to hold feature vectors and train labels
-	#train_features = []
+	# train_features = []
 	# train_labels   = []
 
 	# # loop over the training dataset
@@ -38,7 +39,9 @@ def extract(imgFpath,params,outdir,tag):
 	# 		print ("Processing Image - {} in {}".format(i, cur_label))
 			# read the training image
 	image = cv2.imread(imgFpath)
+	if image is None:
 
+		image = io.imread(imgFpath,as_grey=True)
 	# convert the image to grayscale
 	gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 

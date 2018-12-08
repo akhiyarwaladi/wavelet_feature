@@ -10,7 +10,10 @@ import matplotlib.pyplot as plt
 from sklearn.externals import joblib
 
 def extract(imgFpath,params,outdir,tag):
-    img = io.imread(imgFpath,as_grey=True)
+    img = cv2.imread(imgFpath,0)
+    if img is None:
+
+        img = io.imread(imgFpath,as_grey=True)
     lbpImg = fea.local_binary_pattern(img,
                                    P=params['nNeighbors'],
                                    R=params['radius'],

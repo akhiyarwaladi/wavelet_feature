@@ -37,6 +37,9 @@ def main(argv):
     elif feaName== 'haralick':
         sys.path.append('./glcm/haralick'); import haralick
         extractor = haralick
+    elif feaName== 'shog':
+        sys.path.append('./hog/shog'); import shog
+        extractor = shog
     else:
         print ('FATAL: unknown featureName')
         return

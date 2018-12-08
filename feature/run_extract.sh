@@ -2,15 +2,16 @@
 
 # FEATURE=wmiftah
 # FEATURE_CFG=wavelet/wmiftah/wmiftah.cfg
-FEATURE=wtio
-FEATURE_CFG=wavelet/wtio/wtio.cfg
+# FEATURE=wtio
+# FEATURE_CFG=wavelet/wtio/wtio.cfg
 # FEATURE=wdil
 # FEATURE_CFG=wavelet/wdil/wtio.cfg
 # FEATURE=slbp
 # FEATURE_CFG=lbp/slbp/slbp.cfg
 # FEATURE=haralick
 # FEATURE_CFG=glcm/haralick/haralick.cfg
-
+FEATURE=shog
+FEATURE_CFG=hog/shog/shog.cfg
 
 #DATASET=acacia-crassicarpa
 #DATASET=melanoma_binary
